@@ -15,7 +15,7 @@ class Api {
     var response = await fetch("http://localhost:3080/api/addNewPost", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: post
+      body: JSON.stringify(post)
     });
     if (response.statusCode === 200) {
       console.log("success");
@@ -26,10 +26,11 @@ class Api {
     }
   }
   async editPost(post) {
+    console.log(post);
     var response = await fetch("http://localhost:3080/api/editPost", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: post
+      body: JSON.stringify(post)
     });
     return response.statusCode;
   }

@@ -42,21 +42,17 @@ class BlogApi {
       if (element.id === obj.id) {
         element.body["en-us"] = obj.body;
         element.author = obj.author;
-        element.description = obj.description;
+        element.description = obj.desc;
         element.title = obj.title;
       }
     });
     console.log(allposts);
-    fs.writeFile(
-      "./Blog.API/localdata/post.json",
-      JSON.stringify(posts),
-      err => {
-        if (err) {
-          console.log(err);
-        }
-        return;
+    fs.writeFile("./localdata/post.json", JSON.stringify(posts), err => {
+      if (err) {
+        console.log(err);
       }
-    );
+      return;
+    });
   }
   upsertPost(obj) {
     var setID = guid();
@@ -70,24 +66,20 @@ class BlogApi {
         body: {
           "en-us": obj.body
         },
-        description: obj.description,
+        description: obj.desc,
         readTime: obj.readTime,
         templateId: obj.templateId,
-        postStatus: obj.status
+        postStatus: "draft"
       }
     };
     Object.assign(posts, savePostModel);
 
-    fs.writeFile(
-      "./Blog.API/localdata/post.json",
-      JSON.stringify(posts),
-      err => {
-        if (err) {
-          console.log(err);
-        }
-        return;
+    fs.writeFile("./localdata/post.json", JSON.stringify(posts), err => {
+      if (err) {
+        console.log(err);
       }
-    );
+      return;
+    });
     return;
   }
 }

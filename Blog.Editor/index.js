@@ -41,10 +41,10 @@ app.get("/posts", async (req, res) => {
 app.post("/savedraft", async (req, res) => {
   if (req.body !== null && req.body !== undefined) {
     if (req.body.mode === "edit") {
-      var body = await _api.editPost(res.body);
+      var body = await _api.editPost(req.body);
       res.end(200);
     } else {
-      var body = await _api.upsertNewPost(res.body);
+      var body = await _api.upsertNewPost(req.body);
       res.end(200);
     }
   }
