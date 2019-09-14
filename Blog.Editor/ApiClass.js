@@ -19,11 +19,20 @@ class Api {
     });
     if (response.statusCode === 200) {
       console.log("success");
+      return response.statusCode;
     } else {
       console.log("failed");
+      return response.statusCode;
     }
   }
-  async editPost() {}
+  async editPost(post) {
+    var response = await fetch("http://localhost:3080/api/editPost", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: post
+    });
+    return response.statusCode;
+  }
 }
 
 module.exports = Api;

@@ -3,11 +3,10 @@
     "title": "What to wear this autum",
     "id": "e0e35c12-8fd5-4c0e-9f49-ec9b3295b9c7",
     "date": "2019-08-25T10:07:09.502Z",
-    "author": "Christopher Eadie",
+    "author": "Matthew Eadie",
     "body": {
-      "en-us": "This is what youre going to want to wear this autum season"
+      "en-us": "<div>This is what youre going to want to wear this autum season</div>"
     },
-    "description": "This is a small description to be dislayed on the front end",
     "readTime": "2mins",
     "postStatus": "draft"
   },

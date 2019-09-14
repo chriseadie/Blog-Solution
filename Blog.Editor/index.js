@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const bodyparser = require("body-parser");
 const nunjucks = require("nunjucks");
 const ApiClass = require("./ApiClass");
 const _api = new ApiClass();
@@ -10,7 +11,7 @@ nunjucks.configure("./templates", {
   express: app,
   watch: true
 });
-
+app.use(bodyparser.json({ type: "application/json" }));
 // renders the login screen so that users can login
 app.get("/", (req, res) => {
   res.render("index.njk");
@@ -37,9 +38,15 @@ app.get("/posts", async (req, res) => {
 });
 
 // allows the user to save a draft which they can then come back and edit it later
-app.post("/savedraft", (req, res) => {
+app.post("/savedraft", async (req, res) => {
   if (req.body !== null && req.body !== undefined) {
-    fetch;
+    if (req.body.mode === "edit") {
+      var body = await _api.editPost(res.body);
+      res.end(200);
+    } else {
+      var body = await _api.upsertNewPost(res.body);
+      res.end(200);
+    }
   }
 });
 

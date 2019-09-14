@@ -23,15 +23,15 @@
         <div class="meta-container">
             <div class="meta-title">
                 <label>Title</label>
-                <input type="text" name="title" id="post-title"/>  
+                <input type="text" value="{{data.title}}" name="title" id="post-title"/>  
             </div>
             <div class="meta-description">
                 <label>Description</label>
-                <input type="text" name="description" id="post-description"/>            
+                <input type="text" value="{{data.description}}" name="description" id="post-description"/>            
             </div>
             <div class="meta-author">
                 <label>author</label>
-                <input type="text" name="author" id="post-author"/>
+                <input type="text" value="{{data.author}}" name="author" id="post-author"/>
             </div>
             <div class="meta-language">
                 <label>Language</label>
@@ -45,6 +45,7 @@
             <div class="text-container" id="editorDiv">{{data.body["en-us"] | safe}}</div>
         </div>
         <input type="hidden" id="editor-type" value="{% if data.id %}edit{% else %}new{% endif %}"/>
+        <input type="hidden" id="editor-id" value="{{data.id}}"/>
     </div>
 </div>
 <script src="https://kit.fontawesome.com/d1b67f5949.js"></script>

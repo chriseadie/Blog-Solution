@@ -5,7 +5,7 @@ const bodyparser = require("body-parser");
 const blogcontroller = require("./BlogController.js");
 const _blogApi = new blogcontroller();
 
-app.use(bodyparser.json());
+app.use(bodyparser.json({ type: "application/json" }));
 
 app.get("/api/getAllPosts", async (req, res) => {
   var data = await _blogApi.getAllPosts();
@@ -19,14 +19,16 @@ app.get("/api/getPostById/:id", async (req, res) => {
 
 app.get("/api/getPostByCategory/:category", (req, res) => {});
 
-app.post("/api/addNewPost", (req, res) => {
+app.post("/api/addNewPost", async (req, res) => {
   if (req.body !== null && req.body !== undefined) {
-    var data = _blogApi.upsertPost(req.body);
+    var data = await _blogApi.upsertPost(req.body);
     res.send("Write Complete");
   }
 });
-app.post("/api/editPost", (req, res) => {
+app.post("/api/editPost", async (req, res) => {
   if (req.body !== null && req.body !== undefined) {
+    var data = await _blogApi.editPost(req.body);
+    res.send("Edit Complete");
   }
 });
 
