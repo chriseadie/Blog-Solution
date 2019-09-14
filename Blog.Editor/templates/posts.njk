@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="style.css" type="text/css" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+    <link href="/style.css" type="text/css" rel="stylesheet"></link>
     <title>TFL Post List</title>
 </head>
 <body>
@@ -24,9 +25,9 @@
                     <a href="/editor/{{item.id}}">{{item.title}} - {{item.author}} - {{item.date}}</a>
                 </div>
                 <div class="post-action">
-                    <div><a href="/editor/{{item.id}}">Edit</a></div>
-                    <div>Delete</div>
-                    <div>Publish</div>
+                    <div><a href="/editor/{{item.id}}"><i class="fas fa-pencil-alt"></i></a></div>
+                    <div><i class="fas fa-trash"></i></div>
+                    <div><i class="fas fa-upload"></i></div>
                 </div>
             </div>
             {% endif %}
@@ -45,8 +46,8 @@
                     <a href="/editor/{{item.id}}">{{item.title}} - {{item.author}} - {{item.date}}</a>
                 </div>
                 <div class="post-action">
-                    <div><a href="/editor/{{item.id}}">Edit</a></div>
-                    <div>Delete</div>
+                    <div><a href="/editor/{{item.id}}"><i class="fas fa-pencil-alt"></i></a></div>
+                    <div><i class="fas fa-trash"></i></div>
                 </div>
             </div>
             {% endif %}
@@ -55,6 +56,7 @@
         {% endfor %}
     </div>
 </div>
-    <script src="scripts.js"></script> 
+<script src="https://kit.fontawesome.com/d1b67f5949.js"></script>
+    <script src="/scripts.js"></script> 
 </body>
 </html>

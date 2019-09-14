@@ -12,6 +12,7 @@
     "axios": "^0.19.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
-    "nunjucks": "^3.2.0"
+    "nunjucks": "^3.2.0",
+    "roosterjs": "^7.7.0"
   }
 }

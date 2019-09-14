@@ -29,7 +29,7 @@
     "date": "2019-08-25T10:13:55.772Z",
     "author": "Joe Bloggs",
     "body": {
-      "en-us": "This is what youre going to want to wear this winter season"
+      "en-us": "<div>This is what youre going to want to wear this winter season</div>"
     },
     "description": "This is a small description to be dislayed on the front end",
     "readTime": "6 mins",
