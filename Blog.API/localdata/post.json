@@ -1,0 +1,38 @@
+{
+  "e0e35c12-8fd5-4c0e-9f49-ec9b3295b9c7": {
+    "title": "What to wear this autum",
+    "id": "e0e35c12-8fd5-4c0e-9f49-ec9b3295b9c7",
+    "date": "2019-08-25T10:07:09.502Z",
+    "author": "Christopher Eadie",
+    "body": {
+      "en-us": "This is what youre going to want to wear this autum season"
+    },
+    "description": "This is a small description to be dislayed on the front end",
+    "readTime": "2mins",
+    "postStatus": "draft"
+  },
+  "e7192d20-116c-4589-bfe9-dd0c23b740fb": {
+    "title": "What to wear this winter",
+    "id": "e7192d20-116c-4589-bfe9-dd0c23b740fb",
+    "date": "2019-08-25T10:08:44.716Z",
+    "author": "Joe Bloggs",
+    "body": {
+      "en-us": "This is what youre going to want to wear this winter season"
+    },
+    "description": "This is a small description to be dislayed on the front end",
+    "readTime": "6 mins",
+    "postStatus": "draft"
+  },
+  "a6df17fb-0713-4045-b04c-71a23969f4af": {
+    "title": "What to wear this winter",
+    "id": "a6df17fb-0713-4045-b04c-71a23969f4af",
+    "date": "2019-08-25T10:13:55.772Z",
+    "author": "Joe Bloggs",
+    "body": {
+      "en-us": "This is what youre going to want to wear this winter season"
+    },
+    "description": "This is a small description to be dislayed on the front end",
+    "readTime": "6 mins",
+    "postStatus": "published"
+  }
+}

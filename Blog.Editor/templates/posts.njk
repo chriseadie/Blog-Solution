@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" type="text/css" rel="stylesheet"></link>
+    <title>TFL Post List</title>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar__title">35.</div>
+    <div>Logout</div>
+</div>
+<div class="container">
+    <div class="settings-container">
+        <div class="draft-title">Draft Posts</div>
+        <a href="/createnewpost" class="settings-primary-btn">Create New Post</a>
+    </div>
+    <div class="posts-container">
+        {% for item in data %}
+        {% if item.postStatus == "draft" %}
+            <div class="post-item">
+                <div class="post-details">
+                    <a href="/editor/{{item.id}}">{{item.title}} - {{item.author}} - {{item.date}}</a>
+                </div>
+                <div class="post-action">
+                    <div><a href="/editor/{{item.id}}">Edit</a></div>
+                    <div>Delete</div>
+                    <div>Publish</div>
+                </div>
+            </div>
+            {% endif %}
+            {% else %}
+            <div>No data to display</div>
+        {% endfor %}
+    </div>
+    <div class="settings-container published">
+        <div class="draft-title">Published Posts</div>
+    </div>
+    <div class="posts-container">
+        {% for item in data %}
+        {% if item.postStatus == "published" %}
+            <div class="post-item">
+                <div class="post-details">
+                    <a href="/editor/{{item.id}}">{{item.title}} - {{item.author}} - {{item.date}}</a>
+                </div>
+                <div class="post-action">
+                    <div><a href="/editor/{{item.id}}">Edit</a></div>
+                    <div>Delete</div>
+                </div>
+            </div>
+            {% endif %}
+            {% else %}
+            <div>No data to display</div>
+        {% endfor %}
+    </div>
+</div>
+    <script src="scripts.js"></script> 
+</body>
+</html>
