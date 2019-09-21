@@ -44,6 +44,7 @@ class BlogApi {
         element.author = obj.author;
         element.description = obj.desc;
         element.title = obj.title;
+        element.bannerImage = obj.bannerImage;
       }
     });
     console.log(allposts);
@@ -69,7 +70,8 @@ class BlogApi {
         description: obj.desc,
         readTime: obj.readTime,
         templateId: obj.templateId,
-        postStatus: "draft"
+        postStatus: "draft",
+        bannerImage: obj.bannerImage
       }
     };
     Object.assign(posts, savePostModel);
