@@ -5,6 +5,7 @@ const nunjucks = require("nunjucks");
 const ApiClass = require("./ApiClass");
 const multer = require("multer");
 const path = require("path");
+const user = require("./user");
 const _api = new ApiClass();
 
 app.use(express.static("Assets"));
@@ -33,6 +34,17 @@ const upload = multer({
 app.get("/", (req, res) => {
   res.render("index.njk");
 });
+
+app.post("/login", (req, res) => {
+  console.log(req.body);
+  if (req.body.username == user.username) {
+    if (req.body.password == user.password) {
+      res.redirect("/posts");
+    }
+  }
+  res.redirect("/posts");
+});
+
 app.get("/createnewpost", (req, res) => {
   res.render("editor.njk");
 });
@@ -75,7 +87,6 @@ app.post("/upload", (req, res) => {
       res.send({ filePath: `/images/${req.file.filename}` });
     }
   });
-  res.end();
 });
 app.listen(3030, () => {
   console.log("Blog editor launched on port 3030");

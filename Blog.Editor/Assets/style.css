@@ -3,6 +3,14 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
 
 .navbar {
   background: #0e0e0e;
@@ -95,7 +103,7 @@ body {
 
 .saveDraftBox {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .editor-container {
   border-top: 1px solid lightgrey;
@@ -124,6 +132,7 @@ body {
   display: block;
   font-family: "Roboto", sans-serif;
   height: 2.5rem;
+  font-size: 17px;
 }
 .meta-container .meta-description {
   flex: 1;
@@ -140,6 +149,7 @@ body {
   display: block;
   font-family: "Roboto", sans-serif;
   height: 2.5rem;
+  font-size: 17px;
 }
 .meta-container .meta-author {
   flex: 1;
@@ -156,6 +166,7 @@ body {
   display: block;
   font-family: "Roboto", sans-serif;
   height: 2.5rem;
+  font-size: 17px;
 }
 .meta-container .meta-language {
   flex: 1;
@@ -172,4 +183,36 @@ body {
   display: block;
   font-family: "Roboto", sans-serif;
   height: 2.5rem;
+}
+.editor-btn {
+  border: none;
+  background: none;
+  padding: 1.5rem;
+  margin-right: 5px;
+}
+.editor-btn:hover {
+  background-color: lightgrey;
+}
+.editor-select {
+  height: 2.5rem;
+  width: 200px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+}
+
+.login-container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  height: 500px;
+  width: 500px;
+  background: lightcyan;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

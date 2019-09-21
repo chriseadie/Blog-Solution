@@ -9,9 +9,29 @@
 </head>
 <body>
 <div class="navbar">
-    <div class="navbar__title">35.</div>
-    <div>Logout</div>
+    <div class="nav-container">
+        <div class="navbar__title">35.</div>
+        <div>&nbsp;</div>
+    </div>
 </div>
+<div class="container">
+    <div class="login-container">
+        <form class="form-container" action="/login" method="POST" enctype="application/x-www-form-urlencoded">
+            <div>35 Login</div>
+            <div class="username-container">
+                <label>Username</label>
+                <input name="username" id="username" type="text"/>
+            </div>
+            <div class="username-container">
+                <label>Password</label>
+                <input name="password" id="password" type="password"/>
+            </div>
+            <div class="submit-wrapper">
+                <button id="log-user-in" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+<div>
 <script src="https://kit.fontawesome.com/d1b67f5949.js"></script>
 <script src="scripts.js"></script> 
 </body>
