@@ -6,7 +6,6 @@ BlogEditor.prototype = {
     if (btn) {
       btn.addEventListener("click", async function() {
         var post = await BlogEditor.prototype.generateModel();
-        console.log(post);
         await fetch("http://localhost:3030/savedraft", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -112,7 +111,6 @@ RoosterjsEditor.prototype = {
           })
           .then(res => {
             var fileValue = res.filePath;
-            console.log(fileValue);
             document.getElementById("filePath").value = fileValue;
           });
       });

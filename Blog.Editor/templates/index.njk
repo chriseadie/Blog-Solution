@@ -16,7 +16,7 @@
 </div>
 <div class="container">
     <div class="login-container">
-        <form class="form-container" action="/login" method="POST" enctype="application/x-www-form-urlencoded">
+        <form action="/login" method="POST" class="form-container">
             <div>35 Login</div>
             <div class="username-container">
                 <label>Username</label>
@@ -30,6 +30,7 @@
                 <button id="log-user-in" type="submit">Login</button>
             </div>
         </form>
+        {{error}}
     </div>
 <div>
 <script src="https://kit.fontawesome.com/d1b67f5949.js"></script>

@@ -6,19 +6,33 @@ const ApiClass = require("./ApiClass");
 const multer = require("multer");
 const path = require("path");
 const user = require("./user");
+const fs = require("fs");
+const session = require("express-session");
 const _api = new ApiClass();
 
+app.use(
+  session({
+    secret: "secret-ket-one",
+    saveUninitialized: true,
+    resave: true,
+    cookie: {
+      maxAge: 43200000
+    }
+  })
+);
 app.use(express.static("Assets"));
 nunjucks.configure("./templates", {
   autoescape: true,
   express: app,
   watch: true
 });
+
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyparser.json({ type: "application/json" }));
 
 // Image Storage Engine
 const storage = multer.diskStorage({
-  destination: "./Assets/images/",
+  destination: "../Blog.UI/Assets/images/",
   filename: function(req, file, callback) {
     callback(
       null,
@@ -36,13 +50,14 @@ app.get("/", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  console.log(req.body);
   if (req.body.username == user.username) {
     if (req.body.password == user.password) {
+      req.session.jwt = "HelloWorld";
       res.redirect("/posts");
     }
+  } else {
+    res.redirect("/?error=unauthorised");
   }
-  res.redirect("/posts");
 });
 
 app.get("/createnewpost", (req, res) => {
@@ -57,8 +72,13 @@ app.get("/editor/:id", async (req, res) => {
 });
 // renders all the posts that are available to edit. controls for deletion be available on this screen
 app.get("/posts", async (req, res) => {
-  var data = await _api.getAllPosts();
-  res.render("posts.njk", { data: data });
+  var token = req.session.jwt;
+  if (token === "HelloWorld") {
+    var data = await _api.getAllPosts();
+    res.render("posts.njk", { data: data });
+  } else {
+    res.redirect("/");
+  }
 });
 // allows the user to save a draft which they can then come back and edit it later
 app.post("/savedraft", async (req, res) => {
@@ -73,7 +93,10 @@ app.post("/savedraft", async (req, res) => {
   }
 });
 // takes a post from the reviewal file and added it to the live file for views to see
-app.post("/publishpost", (req, res) => {});
+app.post("/publishpost", async (req, res) => {
+  var body = await _api.promotePostToPublish(req.body);
+  res.end();
+});
 // Deletes a posts from the local file either in live file or reviewal file
 app.post("/deletepost", (req, res) => {});
 
@@ -83,11 +106,22 @@ app.post("/upload", (req, res) => {
     if (err) {
       res.send("Something went wrong");
     } else {
-      console.log(req.file.filename);
       res.send({ filePath: `/images/${req.file.filename}` });
     }
   });
 });
+
+app.post("/deleteUpload", (req, res) => {
+  var imageName = req.params.name;
+  var imageType = req.params.type;
+  try {
+    fs.unlinkSync("../Blog.UI/Assets/images/" + imageName + "." + imageType);
+    res.send("successful Deletion");
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 app.listen(3030, () => {
   console.log("Blog editor launched on port 3030");
 });

@@ -47,7 +47,6 @@ class BlogApi {
         element.bannerImage = obj.bannerImage;
       }
     });
-    console.log(allposts);
     fs.writeFile("./localdata/post.json", JSON.stringify(posts), err => {
       if (err) {
         console.log(err);
@@ -78,7 +77,6 @@ class BlogApi {
 
     fs.writeFile("./localdata/post.json", JSON.stringify(posts), err => {
       if (err) {
-        console.log(err);
       }
       return;
     });
