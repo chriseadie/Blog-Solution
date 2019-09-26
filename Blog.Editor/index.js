@@ -98,7 +98,15 @@ app.post("/publishpost", async (req, res) => {
   res.end();
 });
 // Deletes a posts from the local file either in live file or reviewal file
-app.post("/deletepost", (req, res) => {});
+app.get("/deletepost/:id", async (req, res) => {
+  if (req.params.id !== "style.css" && req.params.id !== "scripts.js") {
+    var data = await _api.deletePostById(req.params.id);
+    if (data == 200) {
+      res.redirect("/posts");
+      return;
+    }
+  }
+});
 
 // Uploads main banner image to the assets folder where it can be accessed
 app.post("/upload", (req, res) => {

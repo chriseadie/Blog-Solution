@@ -18,10 +18,16 @@ class Api {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(post)
     });
-    if (response.statusCode === 200) {
-      return response.statusCode;
+    if (response.status === 200) {
+      return response.status;
     } else {
-      return response.statusCode;
+      return response.status;
+    }
+  }
+  async deletePostById(id) {
+    var response = await fetch(`${appsettings.postsApi}/deletePostById/${id}`);
+    if (response.status == 200) {
+      return response.status;
     }
   }
   async editPost(post) {
