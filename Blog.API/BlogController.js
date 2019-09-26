@@ -27,6 +27,18 @@ class BlogApi {
       }
     }
   }
+  deletePostById(ID) {
+    if (ID !== undefined || ID !== null) {
+      delete posts[ID];
+      fs.writeFile("./localdata/post.json", JSON.stringify(posts), err => {
+        if (err) {
+          console.log(err);
+        }
+        return;
+      });
+    }
+    return;
+  }
   getPostByCategory(category) {
     if (category !== null || category !== "") {
       var allposts = Object.values(posts);

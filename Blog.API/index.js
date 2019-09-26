@@ -17,6 +17,11 @@ app.get("/api/getPostById/:id", async (req, res) => {
   res.send(data);
 });
 
+app.get("/api/deletePostById/:id", async (req, res) => {
+  var data = await _blogApi.deletePostById(req.params.id);
+  res.send(data);
+});
+
 app.get("/api/getPostByCategory/:category", (req, res) => {});
 
 app.post("/api/addNewPost", async (req, res) => {
