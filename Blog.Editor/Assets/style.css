@@ -208,11 +208,43 @@ h6 {
   align-items: center;
 }
 .form-container {
-  height: 500px;
-  width: 500px;
-  background: lightcyan;
+  height: 400px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 2px 2px 20px 2px lightgrey;
+  padding: 2rem;
+}
+.username-container {
+  width: 100%;
+}
+.username-container label {
+  display: block;
+  width: 100%;
+}
+.username-container input {
+  height: 2rem;
+  border: 1px solid lightgrey;
+  width: 100%;
+}
+.submit-wrapper button {
+  margin-top: 20px;
+  width: 150px;
+  height: 2rem;
+  padding: 0.5rem;
+  background: white;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid lightgrey;
+}
+.meta-container .meta-category {
+  width: 23.75%;
+}
+.meta-container .meta-category select {
+  width: 100%;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  height: 2.5rem;
 }

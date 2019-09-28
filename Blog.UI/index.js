@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
   var filtered = data.filter(item => {
     return item.postStatus == "published";
   });
-  res.render("homepage.njk", { data: filtered });
+  res.render("index.njk", { data: filtered });
 });
 app.get("/post/:id", async (req, res) => {
   if (req.params.id !== "style.css" && req.params.id !== "scripts.js") {
@@ -27,10 +27,13 @@ app.get("/post/:id", async (req, res) => {
 });
 app.get("/category/:category", async (req, res) => {
   const data = await _api.getPostByCategory(req.params.category);
-  res.render("homtpage.njk", { data: data });
+  var filtered = data.filter(item => {
+    return item.postStatus == "published";
+  });
+  res.render("index.njk", { data: filtered });
 });
 app.get("*", function(req, res) {
-  res.send("what???", 404);
+  res.render("404.njk");
 });
 
 app.listen(8080, () => {

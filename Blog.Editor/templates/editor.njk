@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css" ></link>
-    <title>TFL Post List</title>
+    <title>Chris Eadie - Editor</title>
 </head>
 <body>
 <div class="navbar">
     <div class="nav-container">
-        <div class="navbar__title">35.</div>
+        <div class="navbar__title">CE.</div>
         <div>Logout</div>
     </div>
 </div>
@@ -36,15 +36,15 @@
             </div>
             <div class="meta-language">
                 <label>Language</label>
-                <select id="post-language" name="language">
-                    <option value="en-us" selected disabled>Please select a language</option>
+                <select id="post-language" name="language" value="en-us" >
+                    <option value="" selected disabled>Please select a language</option>
                     <option value="en-us">English</option>
                 </select>
             </div>
         </div>
         <div class="meta-container">
             <div class="meta-category">
-                <select id="post-category" name="category">
+                <select id="post-category" name="category" value="{{data.category}}">
                     <option value="fashion">fashion</option>
                     <option value="fashion">lifestyle</option>
                     <option value="fashion">health</option>

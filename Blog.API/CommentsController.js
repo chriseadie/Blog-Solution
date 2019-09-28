@@ -8,7 +8,7 @@ class Comments {
       return item.id == ID;
     });
     if (post) {
-      post[0].comments.push(comment);
+      post[0].comments.unshift(comment);
     }
     fs.writeFileSync("./localdata/post.json", JSON.stringify(post), err => {
       if (err) {

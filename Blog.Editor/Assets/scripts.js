@@ -25,6 +25,7 @@ BlogEditor.prototype = {
     var mode = document.getElementById("editor-type").value;
     var id = document.getElementById("editor-id").value;
     var bannerImage = document.getElementById("filePath").value;
+    var category = document.getElementById("post-category").value;
     var model = {
       title,
       author,
@@ -33,7 +34,8 @@ BlogEditor.prototype = {
       language,
       mode,
       id,
-      bannerImage
+      bannerImage,
+      category
     };
     return model;
   }

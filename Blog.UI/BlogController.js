@@ -12,5 +12,12 @@ class Api {
     var res = await response.json();
     return res;
   }
+  async getPostByCategory(category) {
+    var response = await fetch(
+      `${appsettings.postsApi}/getPostByCategory/${category}`
+    );
+    var res = await response.json();
+    return res;
+  }
 }
 module.exports = Api;

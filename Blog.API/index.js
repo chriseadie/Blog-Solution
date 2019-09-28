@@ -30,8 +30,10 @@ app.get("/api/setPostToPublish/:id", async (req, res) => {
 
 app.get("/api/getPostByCategory/:category", async (req, res) => {
   var data = await _blogApi.getAllPosts();
-  var test = req.params.category;
-  console.log(test);
+  var filtered = data.filter(item => {
+    return item.category === req.params.category;
+  });
+  res.send(filtered);
 });
 
 app.post("/api/addNewPost", async (req, res) => {

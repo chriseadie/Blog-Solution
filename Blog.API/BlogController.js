@@ -68,6 +68,7 @@ class BlogApi {
         element.description = obj.desc;
         element.title = obj.title;
         element.bannerImage = obj.bannerImage;
+        element.category = obj.category;
       }
     });
     fs.writeFile("./localdata/post.json", JSON.stringify(posts), err => {
@@ -93,7 +94,9 @@ class BlogApi {
         readTime: obj.readTime,
         templateId: obj.templateId,
         postStatus: "draft",
-        bannerImage: obj.bannerImage
+        bannerImage: obj.bannerImage,
+        category: obj.category,
+        comments: []
       }
     };
     Object.assign(posts, savePostModel);
