@@ -65,3 +65,39 @@ hr.solid-grey {
   height: 500px;
   width: 500px;
 }
+
+.blog-wrapper {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-wrapper .post-container {
+  width: 500px;
+  max-height: 300px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.blog-wrapper .post-container .post-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.blog-wrapper .post-container .post-title {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.blog-wrapper .post-container .post-desc {
+  margin-top: 5px;
+}
+.blog-wrapper .post-container .post-author {
+  margin-top: 5px;
+}
+.blog-wrapper .post-container .post-author .post-label {
+  color: grey;
+  font-size: 16px;
+}

@@ -30,6 +30,14 @@ class Api {
       return response.status;
     }
   }
+  async setPostToPublic(id) {
+    var response = await fetch(
+      `${appsettings.postsApi}/setPostToPublish/${id}`
+    );
+    if (response.status == 200) {
+      return response.status;
+    }
+  }
   async editPost(post) {
     var response = await fetch(`${appsettings.postsApi}/editPost`, {
       method: "POST",

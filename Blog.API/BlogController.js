@@ -39,6 +39,17 @@ class BlogApi {
     }
     return;
   }
+  setPostToPublic(ID) {
+    if (ID !== undefined || ID !== null) {
+      var allposts = Object.values(posts);
+      allposts.forEach(item => {
+        if (item.id == ID) {
+          item.postStatus = "published";
+        }
+      });
+      return posts;
+    }
+  }
   getPostByCategory(category) {
     if (category !== null || category !== "") {
       var allposts = Object.values(posts);

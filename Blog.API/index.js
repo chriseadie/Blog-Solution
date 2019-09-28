@@ -21,6 +21,10 @@ app.get("/api/deletePostById/:id", async (req, res) => {
   var data = await _blogApi.deletePostById(req.params.id);
   res.send(data);
 });
+app.get("/api/setPostToPublish/:id", async (req, res) => {
+  var data = await _blogApi.setPostToPublic(req.params.id);
+  res.send(data);
+});
 
 app.get("/api/getPostByCategory/:category", (req, res) => {});
 

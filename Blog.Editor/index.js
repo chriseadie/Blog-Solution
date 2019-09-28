@@ -119,6 +119,13 @@ app.post("/upload", (req, res) => {
   });
 });
 
+app.get("/setPostToPublic/:id", async (req, res) => {
+  if (req.params.id !== "style.css" && req.params.id !== "scripts.js") {
+    var data = await _api.setPostToPublic(req.params.id);
+    res.redirect("/posts");
+  }
+});
+
 app.post("/deleteUpload", (req, res) => {
   var imageName = req.params.name;
   var imageType = req.params.type;
