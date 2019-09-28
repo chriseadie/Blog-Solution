@@ -22,14 +22,17 @@ app.get("/", async (req, res) => {
     b = new Date(b.date);
     return a > b ? -1 : a < b ? 1 : 0;
   });
+  console.log(data);
   res.render("index.njk", { data: filtered });
 });
+
 app.get("/post/:id", async (req, res) => {
   if (req.params.id !== "style.css" && req.params.id !== "scripts.js") {
     const data = await _api.getPostById(req.params.id);
     res.render("post.njk", { data: data[0] });
   }
 });
+
 app.get("/category/:category", async (req, res) => {
   const data = await _api.getPostByCategory(req.params.category);
   var filtered = data.filter(item => {
@@ -37,6 +40,7 @@ app.get("/category/:category", async (req, res) => {
   });
   res.render("index.njk", { data: filtered });
 });
+
 app.get("*", function(req, res) {
   res.render("404.njk");
 });

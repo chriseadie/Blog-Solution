@@ -1,1 +1,16 @@
-{"98568b59-d702-4a52-b389-3cb81991ada5":{"title":"The Hello World Post","id":"98568b59-d702-4a52-b389-3cb81991ada5","date":"2019-09-28T15:30:26.703Z","author":"Christopher Eadie","body":{"en-us":"<div style=\"\">This is a test make sure everything works from scratch</div>"},"description":"This is the Article to Display First","postStatus":"draft","bannerImage":"/images/bannerImage-1569684608402.jpg","category":"fashion","comments":[]}}
+{
+  "98568b59-d702-4a52-b389-3cb81991ada5": {
+    "title": "The Hello World Post",
+    "id": "98568b59-d702-4a52-b389-3cb81991ada5",
+    "date": "2019-09-28T15:30:26.703Z",
+    "author": "Christopher Eadie",
+    "body": {
+      "en-us": "<div style=\"\">This is a test make sure everything works from scratch</div>"
+    },
+    "description": "This is the Article to Display First",
+    "postStatus": "published",
+    "bannerImage": "/images/bannerImage-1569684608402.jpg",
+    "category": "fashion",
+    "comments": []
+  }
+}

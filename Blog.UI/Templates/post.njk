@@ -32,6 +32,20 @@
            <div class="blog-text-title">{{data.title}}</div>
            <div class="blog-text-content">{{data.body['en-us'] | safe}}</div>
         </div>
+        <div class="comments-container">
+            <div>Comments</div>
+            <div class="">
+                <textarea placeholder="Add a comment" id="commentBox"></textarea>
+                <button id="submitComment">Add Comment</button>
+            </div>
+            <div class="display-comments" id="user-comment-box">
+                {% for item in data.comments %}
+                    <div class="comment-box">
+                        {{item.value}} - {{item.data}}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
     <script src="/scripts.js"></script>
 </body>
