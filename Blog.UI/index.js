@@ -17,6 +17,11 @@ app.get("/", async (req, res) => {
   var filtered = data.filter(item => {
     return item.postStatus == "published";
   });
+  filtered.sort((a, b) => {
+    a = new Date(a.date);
+    b = new Date(b.date);
+    return a > b ? -1 : a < b ? 1 : 0;
+  });
   res.render("index.njk", { data: filtered });
 });
 app.get("/post/:id", async (req, res) => {
