@@ -29,6 +29,9 @@ app.get("/category/:category", async (req, res) => {
   const data = await _api.getPostByCategory(req.params.category);
   res.render("homtpage.njk", { data: data });
 });
+app.get("*", function(req, res) {
+  res.send("what???", 404);
+});
 
 app.listen(8080, () => {
   console.log("Server Started on port 8080");
