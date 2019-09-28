@@ -7,5 +7,10 @@ class Api {
     var res = await response.json();
     return res;
   }
+  async getPostById(id) {
+    var response = await fetch(`${appsettings.postsApi}/getPostById/${id}`);
+    var res = await response.json();
+    return res;
+  }
 }
 module.exports = Api;

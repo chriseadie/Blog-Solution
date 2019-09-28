@@ -74,11 +74,15 @@ hr.solid-grey {
   margin-left: auto;
   margin-right: auto;
 }
+.blog-wrapper a {
+  text-decoration: none;
+}
 .blog-wrapper .post-container {
   width: 500px;
   max-height: 300px;
   margin-top: 10px;
   margin-left: 10px;
+  color: black;
 }
 .blog-wrapper .post-container .post-image {
   width: 100%;
@@ -100,4 +104,26 @@ hr.solid-grey {
 .blog-wrapper .post-container .post-author .post-label {
   color: grey;
   font-size: 16px;
+}
+.blog-banner-image {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.blog-text-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-text-container .blog-text-title {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.blog-text-container .blog-text-content {
+  margin-top: 20px;
+}
+.blog-text-container .blog-text-content div {
+  line-height: 27px;
 }

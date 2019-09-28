@@ -19,6 +19,16 @@ app.get("/", async (req, res) => {
   });
   res.render("homepage.njk", { data: filtered });
 });
+app.get("/post/:id", async (req, res) => {
+  if (req.params.id !== "style.css" && req.params.id !== "scripts.js") {
+    const data = await _api.getPostById(req.params.id);
+    res.render("post.njk", { data: data[0] });
+  }
+});
+app.get("/category/:category", async (req, res) => {
+  const data = await _api.getPostByCategory(req.params.category);
+  res.render("homtpage.njk", { data: data });
+});
 
 app.listen(8080, () => {
   console.log("Server Started on port 8080");

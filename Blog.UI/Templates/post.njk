@@ -26,16 +26,10 @@
             </div>
             <hr class="solid-grey">
         </nav>
-        <div class="blog-wrapper">
-            {% for item in data %}
-            <a href="/post/{{item.id}}"><div class="post-container">
-             <div class="post-image" style="background-image:url({{item.bannerImage}})"></div>
-                <div class="post-title">{{item.title}}</div>
-                <div class="post-desc">{{item.description}}</div>
-                <div class="post-author"><span class="post-label">Written by:</span> {{item.author}}</div>
-            </div>
-            </a>
-            {% endfor %}
+        <div class="blog-banner-image" style="background-image:url({{data.bannerImage}})"></div>
+        <div class="blog-text-container">
+           <div class="blog-text-title">{{data.title}}</div>
+           <div class="blog-text-content">{{data.body['en-us'] | safe}}</div>
         </div>
     </div>
     <script src="/scripts.js"></script>

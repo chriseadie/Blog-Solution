@@ -1,7 +1,7 @@
 const fs = require("fs");
 const posts = require("./localdata/post.json");
 const guid = require("./helpers/guid");
-var savePostModel = require("./models/saveBlogPost");
+var { savePostModel, commentModel } = require("./models/saveBlogPost");
 
 class BlogApi {
   getAllPosts() {
