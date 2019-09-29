@@ -135,3 +135,39 @@ hr.solid-grey {
   align-items: center;
   flex-direction: column;
 }
+.comments-container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.comments-container textarea {
+  margin-top: 10px;
+  border: 1px solid lightgrey;
+  width: 100%;
+  font-family: "Merriweather", serif;
+  padding: 5px;
+  max-height: 200px;
+  min-height: 150px;
+  max-width: 800px;
+  min-width: 800px;
+}
+
+.comments-container button {
+  margin-top: 10px;
+  padding: 5px;
+  width: 200px;
+  border: 1px solid lightgrey;
+  background: white;
+  font-family: "Merriweather", serif;
+}
+.display-comments {
+  border-top: 1px solid lightgrey;
+  margin-top: 10px;
+}
+.comment-box {
+  border: 1px solid lightgrey;
+  margin-top: 10px;
+  padding: 1.5rem 0.5rem;
+}

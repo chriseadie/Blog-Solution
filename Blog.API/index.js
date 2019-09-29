@@ -49,6 +49,7 @@ app.post("/api/editPost", async (req, res) => {
   }
 });
 app.post("/api/addCommentToPost", (req, res) => {
+  console.log(req.body);
   _comment.addNewComment(req.body);
   res.send("comment added");
 });

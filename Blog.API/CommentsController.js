@@ -2,10 +2,10 @@ const posts = require("./localdata/post.json");
 const fs = require("fs");
 
 class Comments {
-  addNewComment(ID, comment) {
+  addNewComment(comment) {
     var allPosts = Object.values(posts);
     var post = allPosts.filter(item => {
-      return item.id == ID;
+      return item.id == comment.id;
     });
     if (post) {
       post[0].comments.unshift(comment);

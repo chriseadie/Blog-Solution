@@ -19,5 +19,13 @@ class Api {
     var res = await response.json();
     return res;
   }
+  async addCommentToPost(comment) {
+    var response = await fetch(`${appsettings.postsApi}/addCommentToPost`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(comment)
+    });
+    return response;
+  }
 }
 module.exports = Api;

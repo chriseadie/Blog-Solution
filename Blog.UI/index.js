@@ -1,11 +1,13 @@
 var express = require("express");
 var nunjucks = require("nunjucks");
 const ApiClass = require("./BlogController");
+const bodyparser = require("body-parser");
 var _api = new ApiClass();
 
 var app = express();
-app.use(express.static("Assets"));
 
+app.use(express.static("Assets"));
+app.use(bodyparser.json({ type: "application/json" }));
 nunjucks.configure("./Templates", {
   autoescape: true,
   express: app,
@@ -31,6 +33,11 @@ app.get("/post/:id", async (req, res) => {
     const data = await _api.getPostById(req.params.id);
     res.render("post.njk", { data: data[0] });
   }
+});
+
+app.post("/addCommentToPost", async (req, res) => {
+  const data = await _api.addCommentToPost(req.body);
+  res.send("Reply Added");
 });
 
 app.get("/category/:category", async (req, res) => {
